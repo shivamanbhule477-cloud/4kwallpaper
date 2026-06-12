@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4K Wallpapers – Stunning HD Backgrounds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --card: #1a1a26;
+      --accent: #7c3aed;
+      --accent2: #a855f7;
+      --glow: rgba(124,58,237,0.35);
+      --text: #f0eeff;
+      --muted: #7a7a9a;
+      --border: rgba(124,58,237,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(10,10,15,0.75);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.4rem;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-btn {
+      background: var(--accent); color: #fff;
+      border: none; padding: 9px 22px; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .nav-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); pointer-events: none;
+    }
+    .orb1 { width: 500px; height: 500px; background: rgba(124,58,237,0.22); top: -100px; left: -100px; }
+    .orb2 { width: 400px; height: 400px; background: rgba(168,85,247,0.15); bottom: 0; right: -80px; }
+    .orb3 { width: 300px; height: 300px; background: rgba(99,102,241,0.12); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--border);
+      background: rgba(124,58,237,0.1);
+      color: #c084fc; font-size: 0.78rem; font-weight: 600;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+      letter-spacing: 0.8px; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #c084fc 0%, #7c3aed 50%, #a855f7 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 560px; color: var(--muted); font-size: 1.1rem;
+      line-height: 1.7; margin-bottom: 44px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: #fff; border: none; padding: 14px 32px;
+      border-radius: 10px; font-size: 1rem; font-weight: 600;
+      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 24px var(--glow);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--glow); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border); padding: 14px 32px;
+      border-radius: 10px; font-size: 1rem; font-weight: 500;
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--accent2); background: rgba(124,58,237,0.08); }
+
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 64px;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+      background: linear-gradient(135deg, #c084fc, #7c3aed);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+
+    /* ── SECTION ── */
+    section { padding: 80px 40px; max-width: 1300px; margin: 0 auto; }
+    .section-label {
+      color: #c084fc; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800; letter-spacing: -1px; margin-bottom: 16px;
+    }
+    .section-sub { color: var(--muted); font-size: 1rem; max-width: 480px; line-height: 1.6; }
+
+    /* ── CATEGORIES ── */
+    .categories { padding: 0 40px 80px; max-width: 1300px; margin: 0 auto; }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px; margin-top: 40px;
+    }
+    .cat-card {
+      border-radius: 16px; overflow: hidden; position: relative;
+      aspect-ratio: 4/3; cursor: pointer;
+      border: 1px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .cat-card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+    .cat-card .bg {
+      width: 100%; height: 100%; display: flex;
+      align-items: center; justify-content: center; font-size: 2.5rem;
+    }
+    .cat-card .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      display: flex; align-items: flex-end; padding: 14px;
+    }
+    .cat-card .overlay span {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem;
+    }
+    /* category gradients */
+    .cat-nature .bg { background: linear-gradient(135deg,#1a3a2a,#2d6a4f,#1a3a2a); }
+    .cat-space .bg { background: linear-gradient(135deg,#0f0c29,#302b63,#24243e); }
+    .cat-city .bg { background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460); }
+    .cat-abstract .bg { background: linear-gradient(135deg,#3a1c71,#d76d77,#ffaf7b); }
+    .cat-anime .bg { background: linear-gradient(135deg,#1e3c72,#2a5298,#1e3c72); }
+    .cat-cars .bg { background: linear-gradient(135deg,#232526,#414345); }
+
+    /* ── WALLPAPER GRID ── */
+    .wall-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 32px; flex-wrap: gap;
+    }
+    .filter-bar {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; margin-bottom: 36px;
+    }
+    .filter-btn {
+      padding: 7px 18px; border-radius: 100px; font-size: 0.83rem; font-weight: 500;
+      cursor: pointer; border: 1px solid var(--border); background: transparent;
+      color: var(--muted); transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent); color: #fff; border-color: var(--accent);
+    }
+
+    .wall-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .wall-card {
+      border-radius: 14px; overflow: hidden; position: relative;
+      aspect-ratio: 16/9; cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: transform 0.25s, box-shadow 0.25s;
+      group: true;
+    }
+    .wall-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.6); }
+    .wall-card .thumb {
+      width: 100%; height: 100%; display: flex;
+      align-items: center; justify-content: center; font-size: 3rem;
+    }
+    .wall-card .actions {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .wall-card:hover .actions { opacity: 1; }
+    .action-btn {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2); color: #fff;
+      padding: 10px 20px; border-radius: 8px; font-size: 0.82rem;
+      font-weight: 600; cursor: pointer; transition: background 0.2s;
+    }
+    .action-btn:hover { background: var(--accent); }
+    .wall-card .badge {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(124,58,237,0.85); color: #fff;
+      font-size: 0.68rem; font-weight: 700; padding: 3px 8px;
+      border-radius: 6px; letter-spacing: 0.5px;
+    }
+    .wall-card .res {
+      position: absolute; bottom: 10px; left: 10px;
+      background: rgba(0,0,0,0.6); color: #ddd;
+      font-size: 0.68rem; padding: 3px 8px; border-radius: 6px;
+    }
+
+    /* wallpaper color blocks */
+    .w1 .thumb { background: linear-gradient(135deg,#0f2027,#203a43,#2c5364); }
+    .w2 .thumb { background: linear-gradient(135deg,#1a1a2e,#7b2fff,#4a0080); }
+    .w3 .thumb { background: linear-gradient(135deg,#0d1b2a,#1b4332,#081c15); }
+    .w4 .thumb { background: linear-gradient(135deg,#2d1b69,#11998e,#38ef7d); }
+    .w5 .thumb { background: linear-gradient(135deg,#1e1e2e,#c9d6ff,#1e1e2e); }
+    .w6 .thumb { background: linear-gradient(135deg,#0f0c29,#d76d77,#ffaf7b); }
+    .w7 .thumb { background: linear-gradient(135deg,#141e30,#243b55); }
+    .w8 .thumb { background: linear-gradient(135deg,#16213e,#0f3460,#533483); }
+    .w9 .thumb { background: linear-gradient(135deg,#1a1a2e,#e94560,#0f3460); }
+    .w10 .thumb { background: linear-gradient(135deg,#0a0a0a,#2d3436,#636e72); }
+    .w11 .thumb { background: linear-gradient(135deg,#1c1c1c,#a855f7,#7c3aed); }
+    .w12 .thumb { background: linear-gradient(135deg,#0d0d0d,#1a5276,#148f77); }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px; margin-top: 48px;
+    }
+    .feat-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feat-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+    .feat-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(124,58,237,0.15); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 18px;
+    }
+    .feat-card h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1rem; margin-bottom: 8px;
+    }
+    .feat-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 40px;
+      text-align: center; color: var(--muted); font-size: 0.85rem;
+    }
+    footer .foot-logo {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem;
+      background: linear-gradient(135deg, #a855f7, #7c3aed);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    footer p { margin-top: 8px; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px; width: 90%; max-width: 480px;
+      text-align: center; position: relative;
+    }
+    .modal h2 {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 1.4rem; margin-bottom: 8px;
+    }
+    .modal p { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; color: var(--muted);
+      font-size: 1.4rem; cursor: pointer;
+    }
+    .res-options { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 16px; }
+    .res-opt {
+      padding: 9px 18px; border-radius: 8px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text); cursor: pointer; font-size: 0.85rem; font-weight: 500;
+      transition: all 0.2s;
+    }
+    .res-opt.active { background: var(--accent); border-color: var(--accent); }
+    .dl-btn {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: #fff; border: none; border-radius: 10px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      box-shadow: 0 4px 20px var(--glow);
+      transition: transform 0.15s;
+    }
+    .dl-btn:hover { transform: translateY(-2px); }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      section, .categories { padding: 60px 20px; }
+      footer { padding: 40px 20px; }
+    }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">4K Wallpapers</div>
+  <ul class="nav-links">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#features">Features</a></li>
+  </ul>
+  <button class="nav-btn" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Browse All</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+  <div class="hero-badge">✦ Free to Download</div>
+  <h1>Stunning<br/><span>4K Wallpapers</span><br/>for Every Screen</h1>
+  <p>Thousands of ultra-high-resolution wallpapers across dozens of categories — curated, free, and ready to download in seconds.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Explore Gallery</button>
+    <button class="btn-outline" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Browse Categories</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Wallpapers</div></div>
+    <div class="stat"><div class="stat-num">4K</div><div class="stat-label">Ultra HD</div></div>
+    <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-num">Free</div><div class="stat-label">Always</div></div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories reveal" id="categories">
+  <div class="section-label">Browse by Category</div>
+  <div class="section-title">Find Your Vibe</div>
+  <p class="section-sub">From deep space to city nights — pick a category that speaks to you.</p>
+  <div class="cat-grid">
+    <div class="cat-card cat-nature" onclick="setFilter('Nature')">
+      <div class="bg">🌿</div>
+      <div class="overlay"><span>Nature</span></div>
+    </div>
+    <div class="cat-card cat-space" onclick="setFilter('Space')">
+      <div class="bg">🌌</div>
+      <div class="overlay"><span>Space</span></div>
+    </div>
+    <div class="cat-card cat-city" onclick="setFilter('City')">
+      <div class="bg">🏙️</div>
+      <div class="overlay"><span>City</span></div>
+    </div>
+    <div class="cat-card cat-abstract" onclick="setFilter('Abstract')">
+      <div class="bg">🎨</div>
+      <div class="overlay"><span>Abstract</span></div>
+    </div>
+    <div class="cat-card cat-anime" onclick="setFilter('Anime')">
+      <div class="bg">⛩️</div>
+      <div class="overlay"><span>Anime</span></div>
+    </div>
+    <div class="cat-card cat-cars" onclick="setFilter('Cars')">
+      <div class="bg">🚗</div>
+      <div class="overlay"><span>Cars</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery" class="reveal">
+  <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+    <div>
+      <div class="section-label">Gallery</div>
+      <div class="section-title">Latest Wallpapers</div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('All', this)">All</button>
+    <button class="filter-btn" onclick="setFilter('Nature', this)">Nature</button>
+    <button class="filter-btn" onclick="setFilter('Space', this)">Space</button>
+    <button class="filter-btn" onclick="setFilter('City', this)">City</button>
+    <button class="filter-btn" onclick="setFilter('Abstract', this)">Abstract</button>
+    <button class="filter-btn" onclick="setFilter('Anime', this)">Anime</button>
+    <button class="filter-btn" onclick="setFilter('Cars', this)">Cars</button>
+  </div>
+
+  <div class="wall-grid" id="wallGrid">
+    <div class="wall-card w1" data-cat="Space" data-name="Cosmic Ocean">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Cosmic Ocean')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w2" data-cat="Abstract" data-name="Purple Dream">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Purple Dream')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w3" data-cat="Nature" data-name="Dark Forest">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Dark Forest')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w4" data-cat="Abstract" data-name="Aurora">
+      <div class="thumb"></div>
+      <div class="badge">8K</div>
+      <div class="res">7680 × 4320</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Aurora')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w5" data-cat="City" data-name="Night Skyline">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Night Skyline')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w6" data-cat="Abstract" data-name="Sunset Blaze">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Sunset Blaze')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w7" data-cat="City" data-name="Steel City">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Steel City')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w8" data-cat="Space" data-name="Nebula Rise">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Nebula Rise')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w9" data-cat="Anime" data-name="Crimson Night">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Crimson Night')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w10" data-cat="Cars" data-name="Dark Drive">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Dark Drive')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w11" data-cat="Abstract" data-name="Violet Surge">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Violet Surge')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+    <div class="wall-card w12" data-cat="Nature" data-name="Deep Sea">
+      <div class="thumb"></div>
+      <div class="badge">4K</div>
+      <div class="res">3840 × 2160</div>
+      <div class="actions">
+        <button class="action-btn" onclick="openModal('Deep Sea')">⬇ Download</button>
+        <button class="action-btn">👁 Preview</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="reveal">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">Built for Quality</div>
+  <p class="section-sub">Every wallpaper is handpicked for resolution, composition, and aesthetic impact.</p>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🔬</div>
+      <h3>True 4K & 8K</h3>
+      <p>Every image is at minimum 3840×2160 — crisp on any display, from ultrawide monitors to Retina screens.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <h3>Instant Download</h3>
+      <p>No sign-up, no waiting. Click download, choose your resolution, and it's yours in seconds.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🗂</div>
+      <h3>12+ Categories</h3>
+      <p>From serene nature scenes to futuristic cityscapes — find exactly what fits your vibe.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🆓</div>
+      <h3>Always Free</h3>
+      <p>No paywalls, no premium tiers. Every wallpaper in the collection is free for personal use.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">4K Wallpapers</div>
+  <p>Curated ultra-HD wallpapers, free for everyone.</p>
+  <p style="margin-top:20px;">Made with ♥ · Free for personal use</p>
+</footer>
+
+<!-- DOWNLOAD MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    <div style="font-size:2.5rem;margin-bottom:12px;">⬇️</div>
+    <h2 id="modalTitle">Download Wallpaper</h2>
+    <p>Choose your resolution:</p>
+    <div class="res-options">
+      <button class="res-opt active" onclick="selectRes(this,'1920x1080')">FHD 1080p</button>
+      <button class="res-opt" onclick="selectRes(this,'2560x1440')">QHD 1440p</button>
+      <button class="res-opt" onclick="selectRes(this,'3840x2160')">4K UHD</button>
+      <button class="res-opt" onclick="selectRes(this,'7680x4320')">8K</button>
+    </div>
+    <button class="dl-btn" onclick="fakeDownload()">Download Free</button>
+  </div>
+</div>
+
+<script>
+  // Filter
+  function setFilter(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    document.querySelectorAll('.wall-card').forEach(card => {
+      if (cat === 'All' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    document.getElementById('gallery').scrollIntoView({behavior:'smooth'});
+  }
+
+  // Modal
+  let currentWall = '';
+  function openModal(name) {
+    event.stopPropagation();
+    currentWall = name;
+    document.getElementById('modalTitle').textContent = name;
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal'))
+      document.getElementById('modal').classList.remove('open');
+  }
+  function selectRes(btn, res) {
+    document.querySelectorAll('.res-opt').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  function fakeDownload() {
+    const btn = document.querySelector('.dl-btn');
+    btn.textContent = '✓ Downloading...';
+    setTimeout(() => {
+      btn.textContent = 'Download Free';
+      document.getElementById('modal').classList.remove('open');
+    }, 1500);
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
